@@ -1,0 +1,26 @@
+<h1>Projects</h1>
+
+<% @projects.each do |project| %>
+	<article>
+		<header>
+			<h2><%= project.name %></h2>
+		</header>
+		<p>
+			<%= project.description %>
+		</p>
+		<table>
+			<tr>
+				<th>Website:</th>
+				<td><%= project.website %></td>
+			</tr>
+			<tr>
+				<th>Targe Pledge Amount:</th>
+				<td><%= project.target_pledge_amount %></td>
+			</tr>
+			<tr>
+				<th>Plede Ends On:</th>
+				<td><%= project.pledge_ends_on %></td>
+			</tr>
+		</table>
+	</article>
+<% end %>

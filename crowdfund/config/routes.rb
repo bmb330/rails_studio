@@ -54,6 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-	# Start flix code
-	get "movies" => "movies#index"
+	# Start crowdfund code
+	get 'projects' => 'projects#index'
 end
