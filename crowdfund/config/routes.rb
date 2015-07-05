@@ -55,5 +55,7 @@ Rails.application.routes.draw do
   #   end
 
 	# Start crowdfund code
+	root 'projects#index'
 	get 'projects' => 'projects#index'
+	get 'projects/:id' => 'projects#show', as: 'project'
 end
