@@ -16,6 +16,12 @@
 	<p>
 		<%= format_pledging_ends_on(@project) %>
 	</p>
+	<h3>Team Member</h3>
+	<p>
+		<%= @project.team_members %>
+	</p>
+	<h3>Image</h3>
+	<%= image_for(@project) %>
 </article>
 
 <%= link_to "All Projects", projects_path %> |
