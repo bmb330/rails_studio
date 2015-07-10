@@ -6,26 +6,32 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Project.create!([
-	{
-		name: "Project A",
-		description: "Project A which of courses is the best one to give money to.",
-		target_pledge_amount: 500.00,
-		pledging_ends_on: 50.days.from_now,
-		website: "http://project-a.com/"
-	},
-	{
-		name: "Project B",
-		description: "Another good project to give money too.",
-		target_pledge_amount: 300.00,
-		pledging_ends_on: 70.days.from_now,
-		website: "http://project-b.com/"
-	},
-	{
-		name: "Project C",
-		description: "The next best project to pledge your money to.",
-		target_pledge_amount: 100.00,
-		pledging_ends_on: 15.days.from_now,
-		website: "http://project-c.com/"
-	}
+Project.create([
+ {
+   name: "Start-Up Project",
+   description: "A description of a start-up project",
+   target_pledge_amount: 100.00,
+   pledging_ends_on: 1.day.from_now,
+   website: "http://project-a.com",
+   team_members: "Amber, John, Charles",
+   image_file_name: "project-a.png"
+ },
+ {
+   name: "Community Project",
+   description: "A description of a community project",
+   target_pledge_amount: 200.00,
+   pledging_ends_on: 1.week.from_now,
+   website: "http://project-b.com",
+   team_members: "Diana, Jane, Joe",
+   image_file_name: "project-b.png"
+ },
+{
+   name: "Personal Project",
+   description: "A description of a person project",
+   target_pledge_amount: 300.00,
+   pledging_ends_on: 1.month.from_now,
+   website: "http://project-c.com",
+   team_members: "Tom, Harry, Sally",
+   image_file_name: "project-c.png"
+ },
 ])

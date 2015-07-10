@@ -1,21 +1,25 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe "Editing a project" do
-	it "updates the project and shows the project's updated details" do
-		project = Project.create(project_attributes)
 
-		visit project_url(project)
+  it "updates the project and shows the project's updated details" do
+    project = Project.create(project_attributes)
 
-		click_link 'Edit'
+    visit project_url(project)
 
-		expect(current_path).to eq(edit_project_path(project))
-		expect(find_field('Name').value).to eq(project.name)
+    click_link 'Edit'
 
-		fill_in 'Name', with: "Updated Project Name"
+    expect(current_path).to eq(edit_project_path(project))
 
-		click_button 'Update Project'
+    expect(find_field('Name').value).to eq(project.name)
 
-		expect(current_path).to eq(project_path(project))
-		expect(page).to have_text('Updated Project Name')
-	end
+    fill_in 'Name', with: "Updated Project Name"
+
+    click_button 'Update Project'
+
+    expect(current_path).to eq(project_path(project))
+
+    expect(page).to have_text('Updated Project Name')
+  end
+
 end

@@ -1,31 +1,35 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe "Viewing an individual project" do
-	it "shows the project's details" do
-		project = Project.create(project_attributes(target_pledge_amount: 100.00))
 
-		visit project_url(project)
+  it "shows the project's details" do
+    project = Project.create(project_attributes(target_pledge_amount: 100, pledging_ends_on: 1.day.from_now))
 
-		expect(page).to have_text(project.name)
-		expect(page).to have_text(project.description)
-		expect(page).to have_text("$100.00")
-		expect(page).to have_text(project.website)
-	end
+    visit project_url(project)
 
-	it "shows the nubmer of days remaining if the pledging end date is in the future" do
-		project = Project.create(pledging_ends_on: 5.days.from_now)
+    expect(page).to have_text(project.name)
+    expect(page).to have_text(project.description)
+    expect(page).to have_text("$100.00")
+    expect(page).to have_text("1 day remaining")
+    expect(page).to have_text(project.website)
+    expect(page).to have_text(project.team_members)
+    expect(page).to have_selector("img[src$='#{project.image_file_name}']")
+  end
 
-		visit project_url(project)
+  it "shows the days remaining if the pledging end date is in the future" do
+    project = Project.create(project_attributes(pledging_ends_on: 1.day.from_now))
 
-		expect(page).to have_text("5 days remaining")
-	end
+    visit project_url(project)
 
-	it "shows 'All Done!' if the pledging end date is in the past" do
-		project = Project.create(pledging_ends_on: 2.days.ago)
+    expect(page).to have_text("1 day remaining")
+  end
 
-		visit project_url(project)
+  it "shows 'All Done!' if the pledging end date is in the past" do
+    project = Project.create(project_attributes(pledging_ends_on: 2.days.ago))
 
-		expect(page).to have_text("All Done!")
-	end
+    visit project_url(project)
+
+    expect(page).to have_text("All Done!")
+  end
+
 end
-

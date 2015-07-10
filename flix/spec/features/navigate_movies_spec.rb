@@ -1,24 +1,26 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe "Navigating movies" do
-	it "allows navigation from the detail page to the listing page" do
-		movie = Movie.create(movie_attributes)
+  
+  it "allows navigation from the detail page to the listing page" do
 
-		visit movie_url(movie)
+    movie = Movie.create(movie_attributes)
 
-		click_link "All Movies"
+    visit movie_url(movie)
 
-		expect(current_path).to eq(movies_path)
-	end
+    click_link "All Movies"
 
-	it "allows navigation from the listing page to the detail page" do
-		movie = Movie.create(movie_attributes)
+    expect(current_path).to eq(movies_path)
+  end
+  
+  it "allows navigation from the listing page to the detail page" do
 
-		visit movies_url
+    movie = Movie.create(movie_attributes)
 
-		click_link movie.title
+    visit movies_url
 
-		expect(current_path).to eq(movie_path(movie))
-	end
+    click_link movie.title
+
+    expect(current_path).to eq(movie_path(movie))
+  end
 end
-

@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709224333) do
+ActiveRecord::Schema.define(version: 20130228222855) do
 
-  create_table "projects", force: :cascade do |t|
+  create_table "projects", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.decimal  "target_pledge_amount"
-    t.datetime "pledging_ends_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "website"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.date     "pledging_ends_on"
     t.string   "team_members"
     t.string   "image_file_name"
   end

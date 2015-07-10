@@ -1,0 +1,28 @@
+<article>
+	<h1><%= @project.name %></h1>
+	<h2>Description</h2>
+	<p>
+		<%= @project.description %>
+	</p>
+	<h3>Website</h3>
+	<p>
+		<%= @project.website %>
+	</p>
+	<h3>Target Pledge Amount</h3>
+	<p>
+		<%= number_to_currency(@project.target_pledge_amount) %>
+	</p>
+	<h3>Pledge Ends On</h3>
+	<p>
+		<%= format_pledging_ends_on(@project) %>
+	</p>
+	<h3>Team Member</h3>
+	<p>
+		<%= @project.team_members %>
+	</p>
+	<h3>Image</h3>
+	<%= image_for(@project) %>
+</article>
+
+<%= link_to "Edit", edit_project_path %> |
+<%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: 'Are you sure?' } %>
