@@ -91,3 +91,119 @@ Processing by ProjectsController#index as HTML
   Rendered layouts/_sidebar.html.erb (0.1ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-09 22:08:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#index as HTML
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/home/brandon/Projects/rails_studio/crowdfund/app/models/project.rb:6: syntax error, unexpected $undefined, expecting '}'
+		with:		 /https?:\/\/[\S]+/\i,
+		     		                    ^
+/home/brandon/Projects/rails_studio/crowdfund/app/models/project.rb:8: syntax error, unexpected '}', expecting keyword_end
+/home/brandon/Projects/rails_studio/crowdfund/app/models/project.rb:10: syntax error, unexpected ':', expecting '}'
+		with:		 /\w+\.(gif|jpg|png)\z/i,
+		     ^
+/home/brandon/Projects/rails_studio/crowdfund/app/models/project.rb:10: syntax error, unexpected ',', expecting '}'
+/home/brandon/Projects/rails_studio/crowdfund/app/models/project.rb:12: syntax error, unexpected '\n', expecting =>):
+  app/models/project.rb:6: syntax error, unexpected $undefined, expecting '}'
+  app/models/project.rb:8: syntax error, unexpected '}', expecting keyword_end
+  app/models/project.rb:10: syntax error, unexpected ':', expecting '}'
+  app/models/project.rb:10: syntax error, unexpected ',', expecting '}'
+  app/models/project.rb:12: syntax error, unexpected '\n', expecting =>
+  app/controllers/projects_controller.rb:3:in `index'
+
+
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-09 22:12:14 -0400
+Processing by ProjectsController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+SyntaxError (/home/brandon/Projects/rails_studio/crowdfund/app/models/project.rb:10: syntax error, unexpected ':', expecting '}'
+		with:		 /\w+\.(gif|jpg|png)\z/i,
+		     ^
+/home/brandon/Projects/rails_studio/crowdfund/app/models/project.rb:10: syntax error, unexpected ',', expecting '}'
+/home/brandon/Projects/rails_studio/crowdfund/app/models/project.rb:12: syntax error, unexpected '\n', expecting =>):
+  app/models/project.rb:10: syntax error, unexpected ':', expecting '}'
+  app/models/project.rb:10: syntax error, unexpected ',', expecting '}'
+  app/models/project.rb:12: syntax error, unexpected '\n', expecting =>
+  app/controllers/projects_controller.rb:3:in `index'
+
+
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/brandon/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"  WHERE (pledging_ends_on >= '2015-07-10 02:13:09.199638')  ORDER BY pledging_ends_on asc
+  Rendered projects/index.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_sidebar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 69ms (Views: 65.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/elements.css?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/buttons.css?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/forms.css?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/project-a.png" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/project-b.png" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/project-c.png" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/arrow.png" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
+
+
+Started GET "/assets/add.png" for 127.0.0.1 at 2015-07-09 22:13:09 -0400
