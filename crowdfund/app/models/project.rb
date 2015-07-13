@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+	has_many :pledges
+
 	validates :name, :description, presence: true
 	validates :description, length: { maximum: 500 }
 	validates :target_pledge_amount, numericality: { greater_than: 0 }

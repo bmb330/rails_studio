@@ -695,3 +695,31 @@ Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2015-07-11 13:51:31 -0
 
 
 Started GET "/assets/project-b.png" for 127.0.0.1 at 2015-07-11 13:51:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePledges (20150712233809)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "pledges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "comment" text, "amount" decimal, "project_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_pledges_on_project_id" ON "pledges" ("project_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150712233809"]]
+  [1m[36m (97.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pledges_on_project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pledges_on_project_id' AND type='index'
+[0m
+  [1m[36m (110.4ms)[0m  [1mCREATE TABLE "pledges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "comment" text, "amount" decimal, "project_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (64.0ms)[0m  [1mCREATE  INDEX "index_pledges_on_project_id" ON "pledges" ("project_id")[0m
+  [1m[35m (77.2ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "target_pledge_amount" decimal, "created_at" datetime, "updated_at" datetime, "website" varchar(255), "pledging_ends_on" date, "team_members" varchar(255), "image_file_name" varchar(255)) 
+  [1m[36m (84.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (110.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (78.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150712233809')
+  [1m[36m (44.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130228190011')[0m
+  [1m[35m (55.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130228222855')
+  [1m[36m (55.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130228190204')[0m
