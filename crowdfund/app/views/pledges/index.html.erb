@@ -1,0 +1,16 @@
+<header id="content-header">
+	<h1>Pledges for <%= link_to(@project.name, @project) %></h1>
+</header>
+
+<ol>
+	<% @pledges.each do |pledge| %>
+		<li>
+			<p>
+				<%= pledge.name %> has pleded <%= pledge.amount %>
+			</p>
+			<p>
+				&quot;<%= pledge.comment %>&quot;
+			</p>
+		</li>
+	<% end %>
+</ol>

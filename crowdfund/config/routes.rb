@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :pledges
-
   root  "projects#index"
-  resources :projects
+  resources :projects do
+		resources :pledges
+	end
 end

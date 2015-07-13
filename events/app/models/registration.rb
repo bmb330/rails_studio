@@ -8,7 +8,7 @@ class Registration < ActiveRecord::Base
 		'Other'
 	]
 
-	validates :name, prsence: true
+	validates :name, presence: true
 	validates :email, format: { with: /(\S+)@(\S+)/ }
 	validates :how_heard, inclusion: { in: HOW_HEARD_OPTIONS }
 
