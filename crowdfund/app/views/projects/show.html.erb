@@ -21,6 +21,7 @@
   </p>
   <footer>
     <nav>
+			<%= link_to "Pledge", new_project_pledge_path(@project), class: 'button ok pledge' %>
       <%= link_to "Edit", edit_project_path(@project), class: 'button' %>
       <%= link_to "Delete", @project, 
                   class: 'button', 

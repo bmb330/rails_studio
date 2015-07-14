@@ -1,0 +1,24 @@
+<header>
+	<h1>Pledge for <%= link_to @project.name, @project %></h1>
+</header>
+
+<%= form_for([@project, @pledge]) do |f| %>
+	<fieldset>
+	<ol>
+		<li class="required">
+			<%= f.label :name, size: 40, autofocus: true %>
+			<%= f.text_field :name %>
+		</li>
+		<li class="required amounts">
+			<%= f.label :amount %>
+			<% Pledge::AMOUNTS.each do |amount| %>
+				<span><%= f.radio_button :amount, amount %><%= amount %></span>
+			<% end %>
+		</li>
+		<li class="required">
+			<%= f.label :comment, cols: 80 %>
+			<%= f.text_area :comment %>
+		</li>
+	</ol>
+	</fieldset>
+<% end %>
