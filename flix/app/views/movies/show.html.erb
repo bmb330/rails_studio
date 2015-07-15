@@ -28,7 +28,23 @@
     <%= format_total_gross(@movie) %>
   </p>
 
-	<%= link_to 'Reviews', movie_reviews_path(@movie) %>
+	<h3>Average Review</h3>
+	<p>
+		<%= format_average_stars(@movie) %>
+	</p>
+
+
+	<% if @movie.recent_reviews.any? %>
+		<h3>Recent Reviews</h3>
+		<ol id="reviews">
+			<% @movie.recent_reviews.each do |review| %>
+				<li><%= truncate(review.comment, length: 25, seperator: ' ') %></li>
+			<% end %>
+		</ol>
+	<% end %>
+	<p>
+		Read all <%= link_to 'reviews', movie_reviews_path(@movie) %>
+</p>
   
   <footer>
     <nav>
